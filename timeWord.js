@@ -2,8 +2,9 @@
 // output = twelve twelve, noon, midnight, nine thirty, seven forty five
 
 // define arrays for hours and minutes
-// parse input into hour/minute, separated by a colon
-// 
+// parse input into hour/minute, delimieter = colon
+// handle special cases for midnight and noon
+// handle minutes 01 - 09 to put an 'oh' in front of the minutes
 
 function timeToWords(time) {
     const hours = [
@@ -17,11 +18,21 @@ function timeToWords(time) {
     let [hour, minute] = time.split(":").map(num => parseInt(num, 10));
     console.log(hour, minute);
 
-    // handle special cases
     if (hour === 0 && minute === 0) {
-        return "midnight";
+        return 'midnight' ;
     }
+  
     if (hour === 12 && minute === 0) {
-        return "noon";
+        return 'noon';
     }
+  
+    let hourWord = hours[hour];
+    let minuteWord = "";
+    if (minute > 0 && minute <= 9) {
+      minuteWord = `oh ${minutes[minute]}`;
+    } else {
+      minuteWord = minutes[minute];
+    }
+    
+    return (`${hourWord} ${minuteWord}`);
 }
