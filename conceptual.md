@@ -3,6 +3,7 @@
 Answer the following questions below:
 
 - What is a JWT?
+Json web token. It's a token that's generated post authentication that allows you to access different parts of an application without having to authenticate every time you head to a new route or what not.  
 
 - What is the signature portion of the JWT?  What does it do?
 
@@ -13,6 +14,7 @@ Answer the following questions below:
 - Compare and contrast unit, integration and end-to-end tests.
 
 - What is a mock? What are some things you would mock?
+A mock is a way for you to create a mimicked version of a function used for testing so that you're not modifying the actual function. 
 
 - What is continuous integration?
 
